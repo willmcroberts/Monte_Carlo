@@ -1,4 +1,3 @@
-import java.time.Instant;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -8,8 +7,7 @@ public class MonteCarloTask implements Callable<Double> {
         this.totalPoints = totalPoints;
     }
 
-    public Double call() throws Exception {
-        Instant start = Instant.now();
+    public Double call() {
         long pointsInCircle = 0;
         for(long i = 0; i < totalPoints; i++){
             double x = ThreadLocalRandom.current().nextDouble(0,2);
